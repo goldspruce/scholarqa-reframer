@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scholarqa-reframer"
+version = "0.1.0"
+description = "Transforms leading closed scientific hypotheses into open, multi-dimensional ScholarQA mechanistic inquiries."
+readme = "README.md"
+authors = [{ name = "Sanity Engine Architecture Team" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "pydantic>=2.0.0",
+    "click>=8.0.0",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.35.0"]
+llm = ["google-genai>=2.0.0"]
+dev = ["pytest>=7.0.0"]
+
+[project.scripts]
+reframer = "scholarqa_reframer.cli:main"
